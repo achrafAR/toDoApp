@@ -1,0 +1,17 @@
+.container_tasks{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-between;
+    
+}
+
+
+.container_tasks:hover{
+    border-radius: 10px;
+}
+
+
+
