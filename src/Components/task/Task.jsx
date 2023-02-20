@@ -1,25 +1,22 @@
-import React, { useState } from 'react'
-import "./task.css"
+import React, { useState } from "react";
+import "./task.css";
 
-function Task() {
-  const tasks = {
-    description : 'first Task',
-    date : "20-02-2022",
-  }
-  const [click , setClick] = useState(false);
+function Task({ description, date }) {
+  const [click, setClick] = useState(false);
 
-  const handleClick = () =>{
+  const handleClick = () => {
     setClick(!click);
-  }
+  };
   return (
-      <div className='container_tasks' 
+    <div
+      className="container_tasks"
       onClick={handleClick}
-      style={{backgroundColor : click ? "red" : "white"}}
-      >
-        <div>{tasks.description}</div>
-        <div>{tasks.date}</div>
-      </div>
-  )
+      style={{ backgroundColor: click ? "red" : "white" }}
+    >
+      <div>{description}</div>
+      <div>{date}</div>
+    </div>
+  );
 }
 
-export default Task
+export default Task;
