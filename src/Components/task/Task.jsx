@@ -11,7 +11,7 @@ function Task({ description, date }) {
     <div
       className="container_tasks"
       onClick={handleClick}
-      style={{ backgroundColor: click ? "red" : "white" }}
+      style={{ backgroundColor: click ? "blue" : "white" }}
     >
       <div>{description}</div>
       <div>{date}</div>
