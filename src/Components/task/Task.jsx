@@ -15,6 +15,7 @@ function Task({ description, date }) {
     >
       <div>{description}</div>
       <div>{date}</div>
+      <input type="checkbox"/>
     </div>
   );
 }
