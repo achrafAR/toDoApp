@@ -41,9 +41,7 @@ export default function Box() {
       {tasks.map((task, i) => (
         <Task
           onDelete={deleteTask}
-          description={task.description}
-          date={task.date}
-          id={task.id}
+          task = {task}
           key={i}
         />
       ))}

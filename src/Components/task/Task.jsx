@@ -1,21 +1,11 @@
 import React, { useState } from "react";
 import "./task.css";
 
-function Task({ description, date, onDelete, id }) {
-  const [click, setClick] = useState(false);
-
-  const handleClick = () => {
-    setClick(!click);
-  };
+function Task({ task, onDelete }) {
   return (
-    <div
-      onDoubleClick = {() => onDelete(id)}
-      className="container_tasks"
-      onClick={handleClick}
-      style={{ backgroundColor: click ? "red" : "white" }}
-    >
-      <div>{description}</div>
-      <div>{date}</div>
+    <div onDoubleClick={() => onDelete(task.id)} className="container_tasks">
+      <div>{task.description}</div>
+      <div>{task.date}</div>
       <input type="checkbox" />
     </div>
   );
