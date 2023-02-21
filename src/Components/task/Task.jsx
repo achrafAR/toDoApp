@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./task.css";
 
-function Task({ description, date }) {
+function Task({ description, date, onDelete, id }) {
   const [click, setClick] = useState(false);
 
   const handleClick = () => {
@@ -11,11 +11,12 @@ function Task({ description, date }) {
     <div
       className="container_tasks"
       onClick={handleClick}
+      onDoubleClick={() => onDelete(id)} //invocation
       style={{ backgroundColor: click ? "blue" : "white" }}
     >
       <div>{description}</div>
       <div>{date}</div>
-      <input type="checkbox"/>
+      <input type="checkbox" />
     </div>
   );
 }
