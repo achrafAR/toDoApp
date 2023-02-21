@@ -39,13 +39,7 @@ export default function Box() {
   return (
     <div className="box">
       {tasks.map((task, i) => (
-        <Task
-          onDelete={deleteTask}
-          description={task.description}
-          date={task.date}
-          id={task.id}
-          key={i}
-        />
+        <Task onDelete={deleteTask} task={task} key={i} />
       ))}
     </div>
   );
