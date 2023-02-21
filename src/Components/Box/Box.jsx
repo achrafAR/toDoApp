@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./box.css";
 import Task from "../task/Task";
+import AddTask from "../AddTask/AddTask";
 
 export default function Box() {
   const [tasks, setTasks] = useState([
@@ -30,6 +31,7 @@ export default function Box() {
       id: 5,
     },
   ]);
+  const [showAddTask, setShowAddTask] = useState(false);
 
   const deleteTask = (id) => {
     const newTasks = tasks.filter((task) => task.id !== id);
@@ -38,12 +40,10 @@ export default function Box() {
 
   return (
     <div className="box">
+      <button onClick={() => setShowAddTask(!showAddTask)}>Press Me</button>
+      {showAddTask ? <AddTask /> : ""}
       {tasks.map((task, i) => (
-        <Task
-          onDelete={deleteTask}
-          task = {task}
-          key={i}
-        />
+        <Task onDelete={deleteTask} task={task} key={i} />
       ))}
     </div>
   );

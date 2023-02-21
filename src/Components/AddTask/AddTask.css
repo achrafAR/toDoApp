@@ -1,0 +1,13 @@
+.add-task {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task form input {
+  margin: 10px 0;
+}
