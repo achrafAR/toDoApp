@@ -31,7 +31,7 @@ export default function Box() {
     },
   ]);
 
-  const delteTask = (id) => {
+  const deleteTask = (id) => {
     const newTasks = tasks.filter((task) => task.id != id);
     setTasks(newTasks);
   };
@@ -42,7 +42,7 @@ export default function Box() {
           description={task.description}
           date={task.date}
           id={task.id}
-          onDelete={delteTask}
+          onDelete={deleteTask}
           key={i}
         />
       ))}
