@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./box.css";
 import Task from "../task/Task";
 import AddTask from "../AddTask/AddTask";
-import PressMe from "../Pressme/PressMe";
-
 
 export default function Box() {
   const [tasks, setTasks] = useState([
@@ -34,25 +32,32 @@ export default function Box() {
     },
   ]);
 
-
-
   const deleteTask = (id) => {
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
   };
 
+  const addTask = (task) => {
+    const newTask = {
+      id: tasks.length + 1,
+      ...task,
+    };
+    setTasks([...tasks, newTask]);
+  };
+
   const RemoveDescription = (taskId) => {
-    setTasks(tasks.map((task) => {
-      if (task.id === taskId) {
-        return { ...task, description: '' };
-      } else {
-        return task;
-      }
-    }));
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === taskId) {
+          return { ...task, description: "" };
+        } else {
+          return task;
+        }
+      })
+    );
   };
 
   const [showTask, setShowTask] = useState(false);
-  
 
   const handleAddTaskButtonClick = () => {
     setShowTask(!showTask);
@@ -60,17 +65,17 @@ export default function Box() {
 
   return (
     <div className="box">
-      <button className= "press_me" onClick={handleAddTaskButtonClick}><h3>Press Me</h3></button>
-      {showTask ? <AddTask /> : ""}
-
-
-   
-
+      <button className="press_me" onClick={handleAddTaskButtonClick}>
+        <h3>Press Me</h3>
+      </button>
+      {showTask ? <AddTask onSubmit={addTask} /> : ""}
       {tasks.map((task, i) => (
-        <Task 
-        onDeleteDescription={RemoveDescription}
-        onDelete={deleteTask} 
-        task={task} key={i} />
+        <Task
+          onDeleteDescription={RemoveDescription}
+          onDelete={deleteTask}
+          task={task}
+          key={i}
+        />
       ))}
     </div>
   );

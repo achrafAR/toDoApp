@@ -1,18 +1,16 @@
 .box {
-    display: flex;
-    width: 50%;
-    height: 70rem;
-    border: 1px solid green;
-    flex-direction: column;
+  display: flex;
+  width: 50%;
+  min-height: 400px;
+  border: 1px solid green;
+  flex-direction: column;
 }
 
 .press_me {
-    width:100px;
-    display: flex;
-    background-color: aqua;
-    align-self: center;
-    justify-content: center;
-    margin-top: 5px;
-    
-    
+  width: 100px;
+  display: flex;
+  background-color: aqua;
+  align-self: center;
+  justify-content: center;
+  margin-top: 5px;
 }
