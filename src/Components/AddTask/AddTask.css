@@ -1,0 +1,23 @@
+.addtask {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.formtask {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.inputtask{
+    padding: 5px;
+    min-height: auto;
+    margin-top: 5px;
+    width: 20rem;
+    border: 2px solid black;
+    
+}
+
+h4{
+    margin-bottom: 10px;
+}
