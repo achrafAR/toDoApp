@@ -3,7 +3,7 @@ import "./box.css";
 import Task from "../task/Task";
 import AddTask from "../AddTask/AddTask";
 
-export default function Box() {
+export default function Box({ clicked }) {
   const [tasks, setTasks] = useState([
     {
       description: "first Task",
@@ -57,18 +57,18 @@ export default function Box() {
     );
   };
 
-  const [showTask, setShowTask] = useState(false);
+  // const [showTask, setShowTask] = useState(false);
 
-  const handleAddTaskButtonClick = () => {
-    setShowTask(!showTask);
-  };
+  // const handleAddTaskButtonClick = () => {
+  //   setShowTask(!showTask);
+  // };
 
   return (
     <div className="box">
-      <button className="press_me" onClick={handleAddTaskButtonClick}>
+      {/* <button className="press_me" onClick={handleAddTaskButtonClick}>
         <h3>Press Me</h3>
-      </button>
-      {showTask ? <AddTask onSubmit={addTask} /> : ""}
+      </button> */}
+      {clicked ? <AddTask onSubmit={addTask} /> : ""}
       {tasks.map((task, i) => (
         <Task
           onDeleteDescription={RemoveDescription}
